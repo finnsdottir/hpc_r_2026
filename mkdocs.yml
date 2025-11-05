@@ -1,0 +1,4 @@
+site_name: My Docs
+site_url: https://mariasfinnsdottir.ca/hpc_r_2026
+theme:
+  name: material
