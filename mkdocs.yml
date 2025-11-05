@@ -1,4 +1,30 @@
-site_name: My Docs
-site_url: https://mariasfinnsdottir.ca/hpc_r_2026
+site_name: Using R & RStudio with HPC
+site_url: https://finnsdottir.github.io/hpc_r_2026
 theme:
   name: material
+  palette:
+    primary: indigo
+  features:
+  - navigation.sections
+  - toc.integrate
+  - navigation.top
+
+markdown_extensions:
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      
+nav:
+  - Introduction: index.md
+
+extra_css:
+  - stylesheets/extra.css
