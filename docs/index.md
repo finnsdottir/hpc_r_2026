@@ -1,26 +1,22 @@
-# Introduction  to R (and RStudio)
+# Using R and RStudio with HPC
 
-Welcome to this workshop on R and R studio! In this session, participants will learn the basics of coding in R, and will become familiar with using RStudio. We will cover creating objects, importing and working with data, using the basic libraries, and performing simple operations.  
+Welcome to this workshop on using R and RStudio on the Digital Research Alliance of Canada's high-performance computing clusters. Over the course of this workshop, we will log into a cluster, load R and download some packages, and then use RStudio to do some model testing and visualization. Afterwards, we will submit our full script as a batch job to the cluster. 
 
-This session is suitable for beginners with no prior knowledge of R. There are no prerequisite coding skills. While the examples and data used will be aimed at the Humanities and Social Sciences community, the session is open to anyone and everyone interested in learning about R.
+This session is suitable for those with some R experience, who feel comfortable with writing and running R scripts. No prior knowledge of Linux or high-performance computing is required. While the examples and data used will be aimed at the Humanities and Social Sciences community, the session is open to anyone and everyone interested in learning about R.
 
 ## Learning outcomes 
 
-1.	Learn to use RStudio
-2.	Become familiar with the basic syntax and concepts of R
-3.	Be able to create projects and organized working directories
-4.	Become familiar with R packages, including ‘tidyverse’ and ‘ggplot2’
-5.	Be able to conduct basic data analysis and visualisations
+1. Learn to use access the Digital Research Alliance of Canada's HPC clusters
+2. Learn to navigate the cluster in your terminal
+3. Learn to load R in the terminal, and to access RStudio through JupyterHub
+4. Learn to submit a job to the cluster
 
 ## Before we start
-To start, you’ll need to download both R and RStudio. Click [here to download R](https://muug.ca/mirror/cran/), and [here to download RStudio](https://posit.co/download/rstudio-desktop/). 
 
-For the project portion of the workshop, we’ll be using the cleaned up messy movies data. If you have yours from the OpenRefine workshop, feel free to use that! If not, you can download the [unmessy_movies.csv data here](./content/unmessy_movies.csv). 
-
-I'd encourage you to follow along with the workshop in R, but if you get lost or want to check something, you can download [my script](./content/final_script.R).
+DOWNLOAD DATA, DOWNLOAD JOB SCRIPT TO RUN
 
 !!!note ""
-    This workshop was developed by drawing on the UBC Library course [Intro to R and RStudio (beginner)](https://ubc-library-rc.github.io/IntroR/) and the Data Carpentries course [R for Social Scientists](https://datacarpentry.github.io/r-socialsci/index.html).
+    This workshop was developed by drawing on the following sources: WHAT
 
 !!!note ""
     Instructor: Maria Sigridur Finnsdottir, PhD. 

@@ -30,15 +30,9 @@ markdown_extensions:
 
 nav:
   - Introduction: index.md
-  - Land Acknowledgement: land_acknowledgement.markdown
-  - Getting started:
-    - R & RStudio: rstudio.md
-    - Basic Syntax: basics.md
-    - Creating a Project: getting_started.md 
-  - Working with Data:
-    - Inspecting Data: inspecting.md
-    - Wrangling Data: analysing.md 
-    - Visualizing Data: visualizing.md
+  - The Basics:
+    - HPC: hpc.md
+    - Using the Shell: terminal.md
 
 extra_css:
   - stylesheets/extra.css
