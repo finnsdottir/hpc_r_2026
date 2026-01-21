@@ -11,4 +11,6 @@
 
 Before we get into using R on the HPC, let's go over a few basics of using the shell and accessing the clusters. 
 
+You must use SSH to log into the clusters
+
 The first time you log in, you 

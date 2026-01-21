@@ -30,9 +30,10 @@ markdown_extensions:
 
 nav:
   - Introduction: index.md
+  - HPC Crashcourse: terminal.md
   - The Basics:
-    - HPC: hpc.md
-    - Using the Shell: terminal.md
+    - Using RStudio: rstudio.md
+  
 
 extra_css:
   - stylesheets/extra.css
