@@ -7,6 +7,7 @@ Before we dive into how to do analyses using R on  high-performance computing cl
 High-performance computing (also known as supercomputing) is a form of computing that uses multiple, linked, powerful CPUs/GPUs to handle fast, more intense, and larger processing. The principle tool for HPC is the computing cluster. 
 
 **Key terms.**
+
 - Core: One processing unit (CPU or GPU)
 - Node: basically a computer (processors, memory, hard disc...) without all the accessories
 - Cluster: collection of many connected nodes
@@ -23,9 +24,16 @@ Basically, the shell is the program that lets you interact with the computer beh
 Once you open the terminal, you will seem the command prompt. The prompt itself can be customized, and will look different based on your operating system. It is called a prompt because it is waiting (or, prompting) you to enter a command. 
 
 <figure markdown="span">
-    ![image of console](./content/shell_start.png){width=800}
+    ![image of console](./content/shell_start.png){width=600}
     <figcaption>My command prompt shows my username and computer name, followed by my working directory (blank) and the % symbol. </figcaption>
 </figure>
+
+To use the shell, we type in commands, which the program then interprets. For example, if we type in 'whoami,' 
+
+```shell
+(base) mariafinnsdottir@JRP93PG4V5 ~ % whereami
+zsh: command not found: whereami
+```
 
 
 ## Logging into the HPC cluster.
