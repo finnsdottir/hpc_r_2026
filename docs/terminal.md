@@ -28,13 +28,14 @@ Once you open the terminal, you will seem the command prompt. The prompt itself 
     <figcaption>My command prompt shows my username and computer name, followed by my working directory (blank) and the % symbol. </figcaption>
 </figure>
 
-To use the shell, we type in commands, which the program then interprets. For example, if we type in 'whoami,' it returns our username:
+To use the shell, we type in commands, which the program then interprets. For example, if we type in `whoami`, it returns our username:
 
 ```shell
 (base) mariafinnsdottir@JRP93PG4V5 ~ % whoami
 mariafinnsdottir
 ```
-??? What is happening here?
+??? note "What is happening here?"
+
     1.	The terminal takes this string of characters “whoami” and looks in a special set of directories on your computer called the PATH for any files that match the string
     2.	If it finds a match, run the file as a program
     3.	whoami is recognized as a program
