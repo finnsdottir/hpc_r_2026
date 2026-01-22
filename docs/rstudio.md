@@ -12,8 +12,8 @@ By default, there are only a small number of packages installed in RStudio on th
 Start by logging into the cluster you plan to use through the shell. Then, start an R session and choose the version of R that you plan to use in RStudio. Once that is loaded up, you'll be able to install the required packages the normal way, for example:
 
 !!!note
-    R`
+    ```R
     install.packages('tidyverse')
     install.packages('ggplot2')
-    `
+    ```
 
