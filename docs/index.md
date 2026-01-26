@@ -16,9 +16,9 @@ This session is suitable for those with some R experience, who feel comfortable 
 DOWNLOAD DATA, DOWNLOAD JOB SCRIPT TO RUN
 
 !!!note ""
-    This workshop was developed by drawing on the following sources: WHAT
-
-    [High-performance research computing in R](https://mint.westdri.ca/r/wb_hpc_slides.html#/title-slide)
+    This workshop was developed by drawing on the following sources:
+    
+    - [High-performance research computing in R](https://mint.westdri.ca/r/wb_hpc_slides.html#/title-slide)
 
 !!!note ""
     Instructor: Maria Sigridur Finnsdottir, PhD. 

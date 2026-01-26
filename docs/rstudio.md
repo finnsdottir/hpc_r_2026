@@ -29,10 +29,10 @@ Start by logging into the cluster you're using through the shell. Then, start an
 
 Once that is loaded up, you'll be able to install the required packages the normal way, for example:
 
-!!!note
-    ```R
-    install.packages('tidyverse')
-    ```
+```R
+install.packages('tidyverse')
+```
+
 The first time you install a package through the shell, R will ask whether you want to create a personal library in your home directory - answer `yes`. You will then have to select a CRAN mirror to use (I generally use Canada (ON1) but you can pick whichever).
 
 Once the package is installed (which may take several minutes) you'll need to restart your R session in JupyterHub. Once you've done that, you should see `tidyverse` in your list of available packages. 
