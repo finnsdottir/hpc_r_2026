@@ -35,7 +35,7 @@ nav:
   - RStudio on HPC:
     - Accessing RStudio: rstudio.md
     - Analysing data in RStudio: 
-  - Batch jobs on HPC:
+  - Batch jobs with R:
     - Using R in the shell: 
   
 

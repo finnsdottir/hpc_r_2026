@@ -18,6 +18,8 @@ DOWNLOAD DATA, DOWNLOAD JOB SCRIPT TO RUN
 !!!note ""
     This workshop was developed by drawing on the following sources: WHAT
 
+    [High-performance research computing in R](https://mint.westdri.ca/r/wb_hpc_slides.html#/title-slide)
+
 !!!note ""
     Instructor: Maria Sigridur Finnsdottir, PhD. 
     ![copyright](./content/by-nc.png){width=200}
