@@ -34,9 +34,10 @@ nav:
   - HPC Crashcourse: terminal.md
   - RStudio on HPC:
     - Accessing RStudio: rstudio.md
-    - Analysing data in RStudio: 
+    - Analysing data in RStudio: analysing_rstudio.md
   - Batch jobs with R:
-    - Using R in the shell: 
+    - Using R in the shell: rscripts.md
+    - Running jobs with R: batch_jobs.md
   
 
 extra_css:
