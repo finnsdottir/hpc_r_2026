@@ -1,4 +1,4 @@
-# Crashcourse: R, HPC and the shell.
+# Crashcourse: Using the shell. 
 
 Before we dive into how to do analyses using R on  high-performance computing clusters, let's start with a crashcourse in HPC and the shell.
 
@@ -74,7 +74,7 @@ In order to log into one of the Alliance's clusters, we need to use a secure she
 ssh username@remote_system_url
 ```
 
-The arguments in this command are (1) the username you've been assigned in the remote system, and (2) the URL/address of the system you are trying to connect to. To log in to an Alliance cluster, you will use your [CCID]() username and the [address of one of the clusters](https://docs.alliancecan.ca/wiki/National_systems#Compute_clusters). For example: 
+The arguments in this command are (1) the username you've been assigned in the remote system, and (2) the URL/address of the system you are trying to connect to. To log in to an Alliance cluster, you will use your [CCDB](https://www.alliancecan.ca/en/our-services/advanced-research-computing/account-management/apply-account) username and the [address of one of the clusters](https://docs.alliancecan.ca/wiki/National_systems#Compute_clusters). For example: 
 
 ```shell 
 ssh user000@fir.alliancecan.ca
@@ -97,6 +97,8 @@ The first time you log in to a system, you will get a warning message with a fin
 Type `yes` to continue connecting to the remote system only if reasons 1, 2, or 3 explain why you are seeing the challenge message. 
 
 When you type your password in, you will **not see anything appear on the screen**: your password will not be printed, nor will you see any key stroke indicators like dots or asterisks. This means you need to be extra careful typing your password - entering an incorrect password more than a few times will cause the system to block your connection attempts for some period of time before you can try again. 
+
+The Alliance clusters use [multifactor authentication](https://docs.alliancecan.ca/wiki/Multifactor_authentication) for logging in, meaning that you will need to have it set up before trying to connect to a cluster.
 
 ## Working in the remote system shell.
 
@@ -135,5 +137,5 @@ You'll notice that now the wokring directory location in my prompt has changed f
 
     File systems in our computer are best thought of as hierarchical or nested systems. Our home working directory is the highest level, with every other directed nested inside. 
     
-    You can move across multiple levels with one `cd` command, so long as you specify the file path. So, to move down two levels, you would need to use `cd folder/subfolder` or to move up two levels, you'd use `cd ../..`.
+    You can move across multiple levels with one `cd` command, so long as you specify the file path. So, to move down two levels, you would need to use `cd folder/subfolder` or to move up two levels, you'd use `cd ../..`
 
