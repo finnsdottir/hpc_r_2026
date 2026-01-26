@@ -23,7 +23,7 @@ By default, there are only a small number of packages installed in RStudio on th
 Start by logging into the cluster you're using through the shell. Then, start an R session and choose the version of R that you've loaded in RStudio. 
 
 <figure markdown="span">
-    ![image of console](./content/choosing-r.png){width=600}
+    ![image of console](./content/choosing_r.png){width=600}
     <figcaption></figcaption>
 </figure>
 

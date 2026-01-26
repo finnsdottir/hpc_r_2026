@@ -22,4 +22,4 @@ DOWNLOAD DATA, DOWNLOAD JOB SCRIPT TO RUN
 
 !!!note ""
     Instructor: Maria Sigridur Finnsdottir, PhD. 
-    ![copyright](./content/by-nc.png){width=200}
+    ![copyright](./content/by-nc.png){width=100}
