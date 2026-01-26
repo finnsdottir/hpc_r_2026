@@ -20,11 +20,19 @@ After you've started your session, if this is the first time you've used RStudio
 
 By default, there are only a small number of packages installed in RStudio on the clusters. The first time you log into RStudio on a cluster, you will need to install the packages you use through the shell/terminal ([see more here](https://docs.alliancecan.ca/wiki/R#Installing_R_packages)). As the clusters are not hooked up to the internet, you cannot do this within RStudio. 
 
-Start by logging into the cluster you plan to use through the shell. Then, start an R session and choose the version of R that you plan to use in RStudio. Once that is loaded up, you'll be able to install the required packages the normal way, for example:
+Start by logging into the cluster you're using through the shell. Then, start an R session and choose the version of R that you've loaded in RStudio. 
+
+<figure markdown="span">
+    ![image of console](./content/choosing-r.png){width=600}
+    <figcaption></figcaption>
+</figure>
+
+Once that is loaded up, you'll be able to install the required packages the normal way, for example:
 
 !!!note
     ```R
     install.packages('tidyverse')
-    install.packages('ggplot2')
     ```
+The first time you install a package through the shell, R will ask whether you want to create a personal library in your home directory - answer `yes`. You will then have to select a CRAN mirror to use (I generally use Canada (ON1) but you can pick whichever).
 
+Once the package is installed (which may take several minutes) you'll need to restart your R session in JupyterHub. Once you've done that, you should see `tidyverse` in your list of available packages. 

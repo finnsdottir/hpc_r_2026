@@ -32,8 +32,11 @@ nav:
   - Introduction: index.md
   - Land Acknowledgement: land_acknowledgement.markdown 
   - HPC Crashcourse: terminal.md
-  - The Basics:
-    - Using RStudio: rstudio.md
+  - RStudio on HPC:
+    - Accessing RStudio: rstudio.md
+    - Analysing data in RStudio: 
+  - Batch jobs on HPC:
+    - Using R in the shell: 
   
 
 extra_css:
