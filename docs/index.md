@@ -13,12 +13,13 @@ This session is suitable for those with some R experience, who feel comfortable 
 
 ## Before we start
 
-DOWNLOAD DATA, DOWNLOAD JOB SCRIPT TO RUN
+We will be using a subset of data from the [National Longitudinal Survey of Older Men, 1966-1990](https://www.nlsinfo.org/content/cohorts/older-and-young-men). You can download it [here](./content/nlsc_data.csv). 
 
-!!!note ""
-    This workshop was developed by drawing on the following sources:
-    
+I'd encourage you to follow along in R and RStudio, but if you get stuck or want to check something, you can download my [RStudio script](./content/rstudio_script.R) and my [R script for the shell](). 
+
+???note "Further resources."
     - [High-performance research computing in R](https://mint.westdri.ca/r/wb_hpc_slides.html#/title-slide)
+    - 
 
 !!!note ""
     Instructor: Maria Sigridur Finnsdottir, PhD. 

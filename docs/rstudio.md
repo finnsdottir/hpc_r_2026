@@ -27,10 +27,10 @@ Start by logging into the cluster you're using through the shell. Then, start an
     <figcaption></figcaption>
 </figure>
 
-Once that is loaded up, you'll be able to install the required packages the normal way, for example:
+Once that is loaded up, you'll be able to install the required packages the normal way, by calling `install.packages()`. For this workshop, you'll need to install `tidyverse`, `broom`, `coefplot`, and `naniar`:
 
 ```R
-install.packages('tidyverse')
+install.packages(c('tidyverse', 'broom', 'coefplot', 'naniar'))
 ```
 
 The first time you install a package through the shell, R will ask whether you want to create a personal library in your home directory - answer `yes`. You will then have to select a CRAN mirror to use (I generally use Canada (ON1) but you can pick whichever).
