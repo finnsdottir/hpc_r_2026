@@ -160,3 +160,5 @@ Let's now save our modified data, and our R script. You can save your script in 
 ```R
 write.csv(data, "./data_output/modified_nlsc_data.csv")
 ```
+
+You can then move this data back on to your computer (or into some other storage) using either Globus or the download tool in JupyterHub. 
