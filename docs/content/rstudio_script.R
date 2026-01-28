@@ -5,6 +5,7 @@ getwd()
 
 #setting up folders 
 dir.create('data_output')
+dir.create('table_output')
 dir.create('fig_output')
 
 #loading our libraries
@@ -77,7 +78,7 @@ coefplot(model.2, intercept=FALSE)
 
 #let's make a nice table with our results
 tidy_model <- tidy(model.2)
-write.csv(tidy_model, "./data_output/tidy_lm_model.csv")
+write.csv(tidy_model, "./table_output/tidy_lm_model.csv")
 
 #save our modified data
 write.csv(data2, "./data_output/modified_nlsc_data.csv")
