@@ -147,7 +147,7 @@ Unfortunately, the way R naturally displays regression output is quite messy. We
 tidy_model <- tidy(model.2)
 tidy_model
 
-write.csv(tidy_model, "./data_output/tidy_lm_model.csv")
+write.csv(tidy_model, "./table_output/tidy_lm_model.csv")
 ```
 
 Let's plot out the coefficients now, using the `coefplot` package. We can save this plot using the 'Export' tool under the Plots tab in RStudio. 
@@ -160,5 +160,3 @@ Let's now save our modified data, and our R script. You can save your script in 
 ```R
 write.csv(data, "./data_output/modified_nlsc_data.csv")
 ```
-
-You can then move this data back on to your computer (or into some other storage) using either Globus or the download tool in JupyterHub. 
