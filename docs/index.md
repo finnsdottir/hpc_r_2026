@@ -19,7 +19,12 @@ I'd encourage you to follow along in R and RStudio, but if you get stuck or want
 
 ???note "Further resources."
     - [High-performance research computing in R](https://mint.westdri.ca/r/wb_hpc_slides.html#/title-slide)
-    - 
+    - [R for Graduate Students](https://bookdown.org/yih_huynh/Guide-to-R-Book/)
+    - [Getting Started (on HPC)](https://training.westdri.ca/getting-started/)
+    - [How to run your R script with Compute Canada](https://medium.com/the-nature-of-food/how-to-run-your-r-script-with-compute-canada-c325c0ab2973)
+    - [Alliance's documentation on R](https://docs.alliancecan.ca/wiki/R)
+    - [Managing R on HPC systems](https://hackmd.io/@bbolker/r_hpc#Getting-started)
+    - [Simple Linear Regression](https://www.sfu.ca/~mjbrydon/tutorials/BAinR/regression.html)
 
 !!!note ""
     Instructor: Maria Sigridur Finnsdottir, PhD. 
