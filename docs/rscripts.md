@@ -103,6 +103,12 @@ if (! file.exists("./fig_output/shell_coefplot.png")){
 
 Here, we check if the full model already exists, and if it does, we read it in to use it for the coefficient plot. If it does not, we run it and save it in our table output folder. 
 
+!!!note "Important things to remember!"
+    When running a job on a remote server/cluster, make sure that:
 
+    - All your file paths are relative
+    - All your data is already in the cluster
+    - All your R packages are already installed
+    - You have checkpoints throughout your script
 
 
