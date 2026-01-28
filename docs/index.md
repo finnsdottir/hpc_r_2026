@@ -15,7 +15,7 @@ This session is suitable for those with some R experience, who feel comfortable 
 
 We will be using a subset of data from the [National Longitudinal Survey of Older Men, 1966-1990](https://www.nlsinfo.org/content/cohorts/older-and-young-men). You can download it [here](./content/nlsc_data.csv). 
 
-I'd encourage you to follow along in R and RStudio, but if you get stuck or want to check something, you can download my [RStudio script](./content/rstudio_script.R), my [R script for the shell](./content/shell_script.R), and my [job script](./content/shell_job.sh). 
+I'd encourage you to follow along in R and RStudio, but if you get stuck or want to check something, you can download my [RStudio script](./content/rstudio_script.R), my [R script for the shell](./content/shell_script.R), and my [job script](./content/shell_job.sh). You can also download the data we'll use [here](./content/nlsc_data.csv). 
 
 ???note "Further resources."
     - [High-performance research computing in R](https://mint.westdri.ca/r/wb_hpc_slides.html#/title-slide)
