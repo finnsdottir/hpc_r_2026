@@ -27,6 +27,12 @@ Start by logging into the cluster you're using through the shell. Then, start an
     <figcaption></figcaption>
 </figure>
 
+Alternatively, if you already now which version of R you want to load, you can run it as follows:
+
+```shell
+[finnsdot94@login1 ~]$ module load r/4.5.0
+```
+
 Once that is loaded up, you'll be able to install the required packages the normal way, by calling `install.packages()`. For this workshop, you'll need to install `tidyverse`, `broom`, `coefplot`, and `naniar`:
 
 ```R
