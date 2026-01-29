@@ -30,9 +30,11 @@ nano
 
 Calling `nano` will open a text editor in the terminal application. We will write our code directory in this window. 
 
+## Coding for the cluster.
+
 It is crucial to include checkpoints in your script when sending in jobs to a cluster. There is a certain amount of guess work in choosing the amount of memory and compute you need, and so, if you guess wrong and your jobs ends before your analyses are done, you don't want to have to repeat work, wasting valuable compute. 
 
-We're going to build checkpoints in by (1) saving our work after every major step, (2) checking whether the file already exists before starting work. Building in these checkpoints has the added bonus of not needing to update our script every time we run it. To do this, we'll be using the `file.exists()` function from base R.
+We're going to build checkpoints in by (1) saving our work after every major step, (2) checking whether the file already exists before starting work. Building in these checkpoints has the added bonus of not needing to update our script every time we run it. To do this, we'll be using the `file.exists()` function from base R. We can also add print statements after the major steps that we can use to debug if needed. 
 
 We'll need to start, like always, with loading out libraries. Afterwards, we'll check if our modified dataset is available, and, if not, we'll create it like we did in RStudio. (Feel free to copy and paste this code, rather than typing it all out in the nano text editor).
 
@@ -68,6 +70,8 @@ if (file.exists("./data_output/modified_nlsc_data.csv")){
         TRUE ~ 0))
     write.csv(data, "./data_output/modified_nlsc_data.csv")
 }
+
+print("data cleaning complete.")
 ```
 
 In the above codeblock, we start by checking if our `modified_nlsc_data.csv` file exists in the `./data_output/` folder. If it does, it gets read in to our `data` data frame. If it does not, then the program moves down to the code cleaning the data and saving it. This means that, if our data does not exist already, it will be created just like we want it, but if it does already exist, then we won't waste any time or compute re-running the data cleaning code.
@@ -80,6 +84,8 @@ if (! file.exists("./table_output/simple_lm.csv")){
     tidy_model.1 <- tidy(model.1)
     write.csv(tidy_model.1, "./table_output/simple_lm.csv")
 }
+
+print("model 1 complete.")
 ```
 
 You'll notice that we're not using the `file.exists()` function in a slightly different way this time. This is because we don't need to read the file in if it exists. So, instead we've added a NOT operator to the function (!), so that the code block only runs if the file does not exist. 
@@ -95,10 +101,14 @@ if (file.exists("./table_output/full_lm.csv")){
     write.csv(tidy_model.2, "./table_output/full_lm.csv")
 }
 
+print("model 2 complete.")
+
 if (! file.exists("./fig_output/shell_coefplot.png")){
     coef_plot <- coefplot(model.2, intercept = FALSE)
     ggsave("./fig_output/shell_coefplot.png", plot=coef_plot)
 }
+
+print("plot complete.")
 ```
 
 Here, we check if the full model already exists, and if it does, we read it in to use it for the coefficient plot. If it does not, we run it and save it in our table output folder. 
