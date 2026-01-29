@@ -1,4 +1,4 @@
-site_name: Using R and RStudio with High-Performance Computing
+site_name: R and RStudio on the Cluster
 site_url: https://finnsdottir.github.io/hpc_r_2026
 theme:
   name: material
