@@ -22,13 +22,7 @@ Once in the cluster, navigate to the R folder, where our data is saved.
 [finnsdot94@login1 R]$
 ```
 
-Call the `ls` command. We should see our `nlsc_data.csv` file, the three folders we created in R studio, and the script that we saved there. We're now going to create our new R script in this same directory. To do that, we'll use a text editor in the shell called `nano`.
-
-```shell
-[finnsdot94@login1 ~]$ nano
-```
-
-Calling `nano` will open a text editor in the terminal application. We will write our code directory in this window. 
+Call the `ls` command. We should see our `nlsc_data.csv` file, the three folders we created in R studio, and the script that we saved there. We're now going to create our new R script in this same directory. To do that, use the command `nano` to open a text editor in the terminal application. We will write our code directory in this window. 
 
 ## Coding for the cluster.
 
@@ -113,7 +107,11 @@ if (! file.exists("./fig_output/shell_coefplot.png")){
 print("plot complete.")
 ```
 
-Here, we check if the full model already exists, and if it does, we read it in to use it for the coefficient plot. If it does not, we run it and save it in our table output folder. 
+Here, we check if the full model already exists, and if it does, we read it in to use it for the coefficient plot. If it does not, we run it and save it in our table output folder.
+
+You can save your script by first pressing ++ctrl+O++, which will prompt you to give the file a name and write it out, and then ++ctrl+X++ to close the window. I've called my script `shell_script.R`. You must use the `.R` ending to indicate that this is an R script. 
+
+Should you need to edit your script, you can call it back by running `nano` followed by the file name. 
 
 !!!note "Important things to remember!"
     When running a job on a remote server/cluster, make sure that:
