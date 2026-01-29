@@ -1,4 +1,4 @@
-# Using R and RStudio with HPC
+# R and RStudio on the Cluster.
 
 Welcome to this workshop on using R and RStudio on the Digital Research Alliance of Canada's high-performance computing clusters. Over the course of this workshop, we will log into a cluster, load R and download some packages, and then use RStudio to do some model testing and visualization. Afterwards, we will submit our full script as a batch job to the cluster. 
 
