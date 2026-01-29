@@ -30,7 +30,7 @@ The last thing we need to do in our job script is to load an R module and run ou
 module load r/4.5.0
 Rscript shell_script.R
 ```
-To save your script, press ++ctrl+O++. It will prompt you to name the file and save it. I've named mine `shell_job.sh`. Then you can press ++ctrl+X++ to close the text editor. 
+To save your script, press ++cmd+o++ (on mac) or ++ctrl+o++ (on windows). It will prompt you to name the file and save it. I've named mine `shell_job.sh`. Then you can press ++cmd+x++ (on mac) or ++ctrl+x++ (on windows) to close the text editor. 
 
 Next, to run your job, call `sbatch` followed by the same of your job script. When your job is submitted, there should be a line of output printed to the console with the name of your job, like this: 
 

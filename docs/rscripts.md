@@ -109,7 +109,7 @@ print("plot complete.")
 
 Here, we check if the full model already exists, and if it does, we read it in to use it for the coefficient plot. If it does not, we run it and save it in our table output folder.
 
-You can save your script by first pressing ++ctrl+o++ O , which will prompt you to give the file a name and write it out, and then ++ctrl+X++ to close the window. I've called my script `shell_script.R`. You must use the `.R` ending to indicate that this is an R script. 
+You can save your script by first pressing ++cmd+o++ (on mac) ++ctrl+o++ (on windows) (the letter, not the number), which will prompt you to give the file a name and write it out, and then ++cmd+x++ (on mac) or ++ctrl+x++ (on windows) to close the window. I've called my script `shell_script.R`. You must use the `.R` ending to indicate that this is an R script. 
 
 Should you need to edit your script, you can call it back by running `nano` followed by the file name. 
 
