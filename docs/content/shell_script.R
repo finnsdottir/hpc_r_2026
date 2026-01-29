@@ -45,6 +45,8 @@ if (! file.exists("./table_output/simple_lm.csv")){
 
 print("model 1 complete.")
 
+Sys.sleep(120)
+
 if (file.exists("./table_output/full_lm.csv")){
     model.2 <- read.csv("./table_output/full_lm.csv")
 } else {

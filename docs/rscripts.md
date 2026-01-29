@@ -18,14 +18,14 @@ Let's start by navigating the terminal, and making sure that we're still connect
 Once in the cluster, navigate to the R folder, where our data is saved. 
 
 ```shell
-[finnsdot94@login1 ~]$ cd r
+[finnsdot94@login1 ~]$ cd R
 [finnsdot94@login1 R]$
 ```
 
 Call the `ls` command. We should see our `nlsc_data.csv` file, the three folders we created in R studio, and the script that we saved there. We're now going to create our new R script in this same directory. To do that, we'll use a text editor in the shell called `nano`.
 
 ```shell
-nano
+[finnsdot94@login1 ~]$ nano
 ```
 
 Calling `nano` will open a text editor in the terminal application. We will write our code directory in this window. 
@@ -76,7 +76,7 @@ print("data cleaning complete.")
 
 In the above codeblock, we start by checking if our `modified_nlsc_data.csv` file exists in the `./data_output/` folder. If it does, it gets read in to our `data` data frame. If it does not, then the program moves down to the code cleaning the data and saving it. This means that, if our data does not exist already, it will be created just like we want it, but if it does already exist, then we won't waste any time or compute re-running the data cleaning code.
 
-Next, let's run our simple linear regression model, where we test the effect of educational attainment on income without any control variables. 
+Next, let's run our simple linear regression model, where we test the effect of educational attainment on income without any control variables. Let's also add a `Sys.sleep()` function to slow our script down and give us time to check it later on. 
 
 ```shell
 if (! file.exists("./table_output/simple_lm.csv")){
@@ -86,6 +86,8 @@ if (! file.exists("./table_output/simple_lm.csv")){
 }
 
 print("model 1 complete.")
+
+Sys.sleep(120)
 ```
 
 You'll notice that we're not using the `file.exists()` function in a slightly different way this time. This is because we don't need to read the file in if it exists. So, instead we've added a NOT operator to the function (!), so that the code block only runs if the file does not exist. 

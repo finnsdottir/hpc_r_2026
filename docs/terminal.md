@@ -77,7 +77,7 @@ ssh username@remote_system_url
 The arguments in this command are (1) the username you've been assigned in the remote system, and (2) the URL/address of the system you are trying to connect to. To log in to an Alliance cluster, you will use your [CCDB](https://www.alliancecan.ca/en/our-services/advanced-research-computing/account-management/apply-account) username and the [address of one of the clusters](https://docs.alliancecan.ca/wiki/National_systems#Compute_clusters). For example: 
 
 ```shell 
-ssh user000@fir.alliancecan.ca
+(base) mariafinnsdottir@JRP93PG4V5 ~ % ssh user000@fir.alliancecan.ca
 ```
 
 The first time you log in to a system, you will get a warning message with a fingerprint challenge alerting you that your computer doesn't recognize the key fingerprint of the remote system. 
