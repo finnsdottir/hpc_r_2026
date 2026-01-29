@@ -33,6 +33,8 @@ if (file.exists("./data_output/modified_nlsc_data.csv")){
     write.csv(data, "./data_output/modified_nlsc_data.csv")
 }
 
+print("data cleaning complete.")
+
 #we'll use the same if file.exists() block to make sure that we don't unneccessarily repeat any of our analyses.
 
 if (! file.exists("./table_output/simple_lm.csv")){
@@ -40,6 +42,8 @@ if (! file.exists("./table_output/simple_lm.csv")){
     tidy_model.1 <- tidy(model.1)
     write.csv(tidy_model.1, "./table_output/simple_lm.csv")
 }
+
+print("model 1 complete.")
 
 if (file.exists("./table_output/full_lm.csv")){
     model.2 <- read.csv("./table_output/full_lm.csv")
@@ -49,8 +53,11 @@ if (file.exists("./table_output/full_lm.csv")){
     write.csv(tidy_model.2, "./table_output/full_lm.csv")
 }
 
+print("model 2 complete.")
+
 if (! file.exists("./fig_output/shell_coefplot.png")){
     coef_plot <- coefplot(model.2, intercept = FALSE)
     ggsave("./fig_output/shell_coefplot.png", plot=coef_plot)
 }
 
+print("plot complete.")
