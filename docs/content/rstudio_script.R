@@ -17,7 +17,7 @@ library(coefplot)
 library(broom)
 
 #loading our data - you may need to update the file path
-data <- read.csv("./nlsc_data.csv")
+data <- read.csv("../nlsc_data.csv")
 str(data)
 head(data)
 

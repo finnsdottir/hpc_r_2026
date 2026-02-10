@@ -11,7 +11,7 @@ library(broom)
 if (file.exists("./data_output/modified_nlsc_data.csv")){
   data <- read.csv("./data_output/modified_nlsc_data.csv")
 } else {
-    data <- read.csv("./nlsc_data.csv")
+    data <- read.csv("../nlsc_data.csv")
     data <- data %>% replace_with_na_all(condition = ~.x %in% c(-2,-4))
     data <- data %>%
         mutate(white = case_when(

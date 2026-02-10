@@ -4,13 +4,14 @@ Now that we have our RStudio set up, we need to upload our data. Data can be mov
 
 The `scp` command follows the structure `scp <file start location> <file end location>` whether you are moving data on to the remote server from your computer, or from the remote server on to your computer. When the file location is on the remote server, it must start with `<username>@<remote server address>:` and then the file location on the server. 
 
-You should already have the [nlsc_data.csv](./content/nlsc_data.csv) downloaded. My downloaded data is in my downloads folder, at the file path `./Downloads/nlsc_data.csv`. I plan to save it in the R directory on the cluster (which should have been created when we launched the RStudio session in our browser). So, to move the data, I will run the following command: 
+You should already have the [nlsc_data.csv](./content/nlsc_data.csv) downloaded. My downloaded data is in my downloads folder, at the file path `./Downloads/nlsc_data.csv`. I plan to save it in my home directory on the cluster (which should have been created when we launched the RStudio session in our browser). So, to move the data, run the following command (replacing the file paths as appropriate): 
 
 ```shell
-scp "./Downloads/nlsc_data.csv" finnsdot94@feb2026-uofa.c3.ca:~/R
+scp "./Downloads/nlsc_data.csv" finnsdot94@feb2026-uofa.c3.ca:~/
 ```
+The terminal will then prompt you to enter your password for the cluster. Once you've done that, you should see a printout of your file transfer progress.
 
-You can now navigate back to your RStudio session in your browser. Your data should now be visible in the `Files` tab in the lower right-hand pane.  
+Once that is complete, you can navigate back to your RStudio session in your browser. Your data should now be visible in the `Files` tab in the lower right-hand pane.  
 
 ???note "About the data."
 
@@ -56,10 +57,12 @@ library(coefplot)
 library(broom)
 ```
 
-After loading the various libraries we'll use, load in your data as "data" and inspect it. One option is to use the `str()` function, which will return informaiton on the structure of the data frame, as well as on the class, length, and content of each column (variable). You can also call `head()` and `tail()` to look at the first and last six rows of the data frame. 
+After loading the various libraries we'll use, load in your data as "data" and inspect it. Since our data is in home directory, and we are working in the R folder, you'll need to start your file path with `..` to represent the directory above. 
+
+One option for inspecting our data is to use the `str()` function, which will return informaiton on the structure of the data frame, as well as on the class, length, and content of each column (variable). You can also call `head()` and `tail()` to look at the first and last six rows of the data frame. 
 
 ```R
-data <- read.csv("./nlsc_data.csv")
+data <- read.csv("../nlsc_data.csv")
 str(data)
 head(data)
 ```
