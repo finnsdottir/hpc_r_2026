@@ -7,7 +7,7 @@ The `scp` command follows the structure `scp <file start location> <file end loc
 You should already have the [nlsc_data.csv](./content/nlsc_data.csv) downloaded. My downloaded data is in my downloads folder, at the file path `./Downloads/nlsc_data.csv`. I plan to save it in the R directory on the cluster (which should have been created when we launched the RStudio session in our browser). So, to move the data, I will run the following command: 
 
 ```shell
-scp ".//Downloads/nlsc_data.csv" finnsdot94@feb2026-uofa.c3.ca:~/R
+scp "./Downloads/nlsc_data.csv" finnsdot94@feb2026-uofa.c3.ca:~/R
 ```
 
 You can now navigate back to your RStudio session in your browser. Your data should now be visible in the `Files` tab in the lower right-hand pane.  
@@ -42,6 +42,8 @@ dir.create('data_output')
 dir.create('fig_output')
 dir.create('table_output')
 ```
+
+If not all your new folders show up when you run the lines, try refreshing the `Files` pane. 
 
 We'll save our model output, modified data, and plots in these folders. Next, load the libraries we'll be using. Unlike with the `install.packages ` function, we cannot feed libraries in as a list. 
 
