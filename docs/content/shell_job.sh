@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --time=00:00:30
+#SBATCH --time=00:05:00
 #SBATCH --mem-per-cpu=1G
 #SBATCH --cpus-per-task=1
 #SBATCH --job-name="marias_lm"
