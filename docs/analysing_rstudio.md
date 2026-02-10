@@ -1,6 +1,16 @@
 # Analysing data in RStudio. 
 
-Now that we have our RStudio set up, we need to upload our data. Data can be moved into the cluster using [Globus](https://docs.alliancecan.ca/wiki/Globus/en) or through JupyterHub, as we'll do here. To upload data onto our cluster, navigate to the folder tab in the menu on the left side of the window and press the upload button. From there, navigate to the data you downloaded and click `open`.
+Now that we have our RStudio set up, we need to upload our data. Data can be moved into the cluster using [Globus](https://docs.alliancecan.ca/wiki/Globus/en) or through JupyterHub in your browser. Alternatively, you can upload data into the cluster using `scp` (secure copy protocol), as we'll do here. 
+
+The `scp` command follows the structure `scp <file start location> <file end location>` whether you are moving data on to the remote server from your computer, or from the remote server on to your computer. When the file location is on the remote server, it must start with `<username>@<remote server address>:` and then the file location on the server. 
+
+You should already have the [nlsc_data.csv](./content/nlsc_data.csv) downloaded. My downloaded data is in my downloads folder, at the file path `./Downloads/nlsc_data.csv`. I plan to save it in the R directory on the cluster (which should have been created when we launched the RStudio session in our browser). So, to move the data, I will run the following command: 
+
+```shell
+scp ".//Downloads/nlsc_data.csv" finnsdot94@feb2026-uofa.c3.ca:~/R
+```
+
+You can now navigate back to your RStudio session in your browser. Your data should now be visible in the `Files` tab in the lower right-hand pane.  
 
 ???note "About the data."
 
@@ -30,6 +40,7 @@ getwd()
 #setting up folders
 dir.create('data_output')
 dir.create('fig_output')
+dir.create('table_output')
 ```
 
 We'll save our model output, modified data, and plots in these folders. Next, load the libraries we'll be using. Unlike with the `install.packages ` function, we cannot feed libraries in as a list. 

@@ -34,11 +34,11 @@ markdown_extensions:
 nav:
   - Introduction: index.md
   - Land Acknowledgement: land_acknowledgement.markdown 
-  - HPC Crashcourse: terminal.md
-  - RStudio on HPC:
+  - Getting Started:
+    - HPC Crashcourse: terminal.md
     - Accessing RStudio: rstudio.md
+  - Analysis with R:
     - Analysing data in RStudio: analysing_rstudio.md
-  - Batch jobs with R:
     - Using R in the shell: rscripts.md
     - Running jobs with R: batch_jobs.md
   

@@ -13,6 +13,8 @@ This session is suitable for those with some R experience, who feel comfortable 
 
 ## Before we start
 
+Before starting, you will need an account to access the cluster. To sign up for an account with the Alliance, follow [the instructions here](https://www.alliancecan.ca/en/our-services/advanced-research-computing/account-management/apply-account). 
+
 We will be using a subset of data from the [National Longitudinal Survey of Older Men, 1966-1990](https://www.nlsinfo.org/content/cohorts/older-and-young-men). You can download it [here](./content/nlsc_data.csv). 
 
 I'd encourage you to follow along in R and RStudio, but if you get stuck or want to check something, you can download my [RStudio script](./content/rstudio_script.R), my [R script for the shell](./content/shell_script.R), and my [job script](./content/shell_job.sh). 

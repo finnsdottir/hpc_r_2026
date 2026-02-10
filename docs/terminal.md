@@ -139,3 +139,4 @@ You'll notice that now the wokring directory location in my prompt has changed f
     
     You can move across multiple levels with one `cd` command, so long as you specify the file path. So, to move down two levels, you would need to use `cd folder/subfolder` or to move up two levels, you'd use `cd ../..`
 
+Exiting the remote system is easy: just type `exit` in the terminal and hit enter. 
