@@ -3,7 +3,7 @@
 Now that we have our RStudio set up, we need to upload our data. There are several ways to upload data into the cluster under your account:
 
 1. Data can be moved into the cluster using [Globus](https://docs.alliancecan.ca/wiki/Globus/en). Here's a [video explaining how](https://www.youtube.com/watch?v=0JJaFV4PEhk).
-2. You can import data directly into JupyterHub in your broswer. After launching a server, with the JupyterLab user interface, select the upload files button and open the desired file in your finder. 
+2. You can import data directly into JupyterHub in your broswer. After launching a server, with the JupyterLab user interface, select the [upload files button](./content/upload_file_jupyter.png) and open the desired file in your finder. 
 3. Using a secure copy protocol, or `stp`.
 
 The `scp` command follows the structure `scp <file start location> <file end location>` whether you are moving data on to the remote server from your computer, or from the remote server on to your computer. When the file location is on the remote server, it must start with `<username>@<remote server address>:` and then the file location on the server. 
