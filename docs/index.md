@@ -13,7 +13,8 @@ This session is suitable for those with some R experience, who feel comfortable 
 
 ## Before we start
 
-Before starting, you will need an account to access the cluster. To sign up for an account with the Alliance, follow [the instructions here](https://www.alliancecan.ca/en/our-services/advanced-research-computing/account-management/apply-account). 
+!!!note "Using the Alliance clusters."
+    To use the Digital Research Alliance of Canada's clusters, you will need to first sign up for an account. To sign up for an account with the Alliance, follow [the instructions here](https://www.alliancecan.ca/en/our-services/advanced-research-computing/account-management/apply-account). 
 
 We will be using a subset of data from the [National Longitudinal Survey of Older Men, 1966-1990](https://www.nlsinfo.org/content/cohorts/older-and-young-men). You can download it [here](./content/nlsc_data.csv). 
 

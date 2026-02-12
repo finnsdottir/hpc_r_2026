@@ -10,10 +10,10 @@ The first step in writing your job script is to define the script interpreter (b
 
 In this case, we're telling the shell that we're coding in bash. 
 
-Next, we need to define the requests in our job so that the scheduler knows how much memory, how much time, and how much compute (CPUs or GPUs) we need. Here, since we're running a pretty small job, we'll just ask for 30 minutes, 1GB of memory, and 1 CPU. We'll also give our job a name so that it's easy to find in the queue. 
+Next, we need to define the requests in our job so that the scheduler knows how much memory, how much time, and how much compute (CPUs or GPUs) we need. Here, since we're running a pretty small job, we'll just ask for 3 minutes, 1GB of memory, and 1 CPU. We'll also give our job a name so that it's easy to find in the queue. 
 
 ```shell
-#SBATCH --time=00:00:30
+#SBATCH --time=00:03:00
 #SBATCH --mem_per-cpu=1G
 #SBATCH --cpus-per-task=1
 #SBATCH --job-name="marias_lm"
@@ -91,17 +91,17 @@ For a full list of the formatting options, run `sacct --helpformat`.
 
 ???note "Evaluate your job while it is running"
 
-    You can also check currently running jobs by using the `sstat` command followed by your job ID. You will also need to specify what information you want and how you want it formatted (otherwise it will print out a huge amount of data on your job), For example, to ask it to display how much memory is being used by job 16 in real time:
+    You can also check currently running jobs by using the `sstat` command followed by your job ID. You will also need to specify what information you want and how you want it formatted (otherwise it will print out a huge amount of data on your job), For example, to ask it to display how much memory is being used by job 19 in real time:
 
     ```shell
-    sstat 16.batch --format="JobID,MaxRSS" 
+    sstat 19.batch --format="JobID,MaxRSS" 
     ```
-    The code above specifies that this is job 16 and asks for the output to be given in the format of job id and then memory, like so:
+    The code above specifies that this is job 19 and asks for the output to be given in the format of job id and then memory, like so:
 
     ```shell
     JobID            MaxRSS 
     ------------ ---------- 
-    16.batch        188044K 
+    19.batch        188044K 
     ```
 
     For a complete list of what options you can use with the `sstat` command, run the following:
@@ -131,7 +131,7 @@ Now that we are working locally, we can download our files from the remote serve
 Let's try this first with our coefficient plot, inside the `fig_output` folder. Let's save it to our current working directory by using `.` as the location. 
 
 ```shell
-scp finnsdot94@soc-515-uofa.c3.ca:R/fig_output/coef_plot.png .
+scp finnsdot94@feb2026-uofa.c3.ca:R/fig_output/coef_plot.png .
 ```
 
 In the code above, I first call `scp`, then enter my username `@` the remote server's address. The name and location of the file come next, after a colon `:`. Finally, I've used a period `.` to tell the computer to save the file in my current working directory. You can also put a file path in place of the period to save your files elsewhere. 
@@ -146,7 +146,7 @@ Once you've pressed enter on that command, you will be prompted to enter your pa
 We also have the option to download and save more than one file at a time using wildcards `*`. Let's use the wildcard character to download both csv files from our `table_output` folder at the same time. 
 
 ```shell
-scp "finnsdot94@soc-515-uofa.c3.ca:R/table_output/*.csv" .
+scp "finnsdot94@feb2026-uofa.c3.ca:R/table_output/*.csv" .
 ```
 
 You should notice that, in addition to using a wildcard instead of a file name, we've also had to enclose our username, address, and file request in quotation marks. 
@@ -155,5 +155,5 @@ Finally, use `scp` to download our cleaned/modified data file.
 
 ???note "Solution."
     ```shell
-    scp finnsdot94@soc-515-uofa.c3.ca:R/data_output/modified_nlsc_data.csv .
+    scp finnsdot94@feb2026-uofa.c3.ca:R/data_output/modified_nlsc_data.csv .
     ```

@@ -1,10 +1,14 @@
 # Analysing data in RStudio. 
 
-Now that we have our RStudio set up, we need to upload our data. Data can be moved into the cluster using [Globus](https://docs.alliancecan.ca/wiki/Globus/en) or through JupyterHub in your browser. Alternatively, you can upload data into the cluster using `scp` (secure copy protocol), as we'll do here. 
+Now that we have our RStudio set up, we need to upload our data. There are several ways to upload data into the cluster under your account:
+
+1. Data can be moved into the cluster using [Globus](https://docs.alliancecan.ca/wiki/Globus/en). Here's a [video explaining how](https://www.youtube.com/watch?v=0JJaFV4PEhk).
+2. You can import data directly into JupyterHub in your broswer. After launching a server, with the JupyterLab user interface, select the upload files button and open the desired file in your finder. 
+3. Using a secure copy protocol, or `stp`.
 
 The `scp` command follows the structure `scp <file start location> <file end location>` whether you are moving data on to the remote server from your computer, or from the remote server on to your computer. When the file location is on the remote server, it must start with `<username>@<remote server address>:` and then the file location on the server. 
 
-You should already have the [nlsc_data.csv](./content/nlsc_data.csv) downloaded. My downloaded data is in my downloads folder, at the file path `./Downloads/nlsc_data.csv`. I plan to save it in my home directory on the cluster (which should have been created when we launched the RStudio session in our browser). So, to move the data, run the following command (replacing the file paths as appropriate): 
+You should already have the [nlsc_data.csv](./content/nlsc_data.csv) downloaded. My downloaded data is in my downloads folder, at the file path `./Downloads/nlsc_data.csv`. I plan to save it in my home directory on the cluster (represented by the tilde ~). So, to move the data, run the following command (replacing the username and file paths as appropriate): 
 
 ```shell
 scp "./Downloads/nlsc_data.csv" finnsdot94@feb2026-uofa.c3.ca:~/
@@ -67,7 +71,9 @@ str(data)
 head(data)
 ```
 
-Next, call `view(data)` and scroll through the data window that pops up. You should see that our data includes some values that don't make sense, such as income values of -2 and -4. This is because missing values are being represented as -2 and -4 in our dataset. Before we do any more analyses, we'll need to replace those with `NA` values. To do this, we will use functions from the `naniar` package. First, let's replace the missing values in the income variable. 
+Next, call `View(data)` and scroll through the data window that pops up. Remember: R is case sensitive, so you must type `View`, not `view`. 
+
+You should see that our data includes some values that don't make sense, such as income values of -2 and -4. This is because missing values are being represented as -2 and -4 in our dataset. Before we do any more analyses, we'll need to replace those with `NA` values. To do this, we will use functions from the `naniar` package. First, let's replace the missing values in the income variable. We're going to assign our data to a new data frame, just this one time, to preserve the original data. 
 
 ```R
 data2 <- data %>% replace_with_na(replace = list(income = c(-2,-4)))
@@ -86,7 +92,7 @@ In this code, we use the function `replace_with_na_all` and supply it with the c
 Next, let's make a scatterplot from our cleaned data to visually assess the relationship between education and income using `ggplot`. Let's also save it to our fig_output folder. 
 
 ```R
-data %>%
+data2 %>%
   ggplot(aes(x=highest_grade, y=income))+geom_point()
 
 ggsave("./fig_output/educ_inc_plot.png")
@@ -101,7 +107,7 @@ The resulting scatterplot shows us that there is a clear, positive relationship 
 Let's further test this relationship by looking at the correlation between these two variables. We can do this using the `cor()` function and supplying it with arguments for our `x` and `y` variables. Given that we have missing data in our data frame, we will also need to tell it to use only complete observations, otherwise the function will return a value of `NA`. Remember that you can also go to the "Help" tab in RStudio to learn more about individual packages or functions. 
 
 ```R
-cor(data$income, data$highest_grade, use='complete.obs') 
+cor(data2$income, data2$highest_grade, use='complete.obs') 
 ```
 
 This function returns a correlation of 0.380902, indicating a moderate positive relationship between education and income - just as we saw in the scatterplot. 
@@ -109,22 +115,22 @@ This function returns a correlation of 0.380902, indicating a moderate positive 
 Taking this another step further, let's now run a linear regression of income on education to test the statistical significant of the relationship. We do this with the `lm()` function in the `stats` package. The basic structure of a linear regression in R is `model <- lm(x ~ y, data=data)`. 
 
 ```R
-model.1 <- lm(income ~ highest_grade, data=data)
+model.1 <- lm(income ~ highest_grade, data=data2)
 summary(model.1)
 ```
 
 What do the results tell us about the relationship between income and education? 
 
-Obviously, the relationship between these things is more complicated. So, let's try adding some control variables to see how race, age, rural residence, and marital status might influence the effect of education on income. Before we do that, we'll need to recode some of our categorical variables into dummy variables. We can do this using the `mutate` function in `dplyr`, which allows us to preserve the original data. First, let's recode race and marital status into dummies for white and married:
+Obviously, the relationship between these things is more complicated. So, let's try adding some control variables to see how race, age, rural residence, and marital status might influence the effect of education on income. Before we do that, we'll need to recode some of our categorical variables into dummy variables. We can do this using the `mutate` function in `dplyr`, which allows us to preserve the original variable. First, let's recode race and marital status into dummies for white and married:
 
 ```R
-data <- data %>%
+data2 <- data2 %>%
   mutate(white = recode(race,
                         1==1,
                         2==0,
                         3==0))
 
-data <- data %>%
+data2 <- data2 %>%
   mutate(married = recode(marital,
                           1==1,
                           2==1,
@@ -137,12 +143,12 @@ data <- data %>%
 As shown above, `mutate` can be combined with a `recode` function to recode the values of a variable one by one. However, this can be a bit cumbersome when dealing with a variable with multiple possible values. In these cases, `case_when` comes quite in handy. Let's now use `case_when` to recode residence and children. In this case, we'll recode them to test whether rural residence and having a large family impact the relationship between education and income.
 
 ```R
-data <- data %>%
+data2 <- data2 %>%
   mutate(rural = case_when(
     residence == 8 ~ 1,
     TRUE ~ 0))
 
-nlsc_data <- nlsc_data %>%
+data2 <- data2 %>%
   mutate(child5 = case_when(
     children >= 5 ~ 1,
     TRUE ~ 0))
@@ -151,7 +157,7 @@ nlsc_data <- nlsc_data %>%
 Now, we can put these into our model. We can build on the basic linear model structure in R by adding control variables behind the independent variable.
 
 ```R 
-model.2 <- lm(income ~ highest_grade + age + married + white + rural + child5, data=data)
+model.2 <- lm(income ~ highest_grade + age + married + white + rural + child5, data=data2)
 summary(model.2)
 ```
 
@@ -174,5 +180,5 @@ coefplot(model.2, intercept=FALSE)
 Let's now save our modified data, and our R script. You can save your script in the browser window, and run the following to save your data:
 
 ```R
-write.csv(data, "./data_output/modified_nlsc_data.csv")
+write.csv(data2, "./data_output/modified_nlsc_data.csv")
 ```

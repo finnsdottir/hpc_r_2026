@@ -74,13 +74,15 @@ In order to log into one of the Alliance's clusters, we need to use a secure she
 ssh username@remote_system_url
 ```
 
-The arguments in this command are (1) the username you've been assigned in the remote system, and (2) the URL/address of the system you are trying to connect to. To log in to an Alliance cluster, you will use your [CCDB](https://www.alliancecan.ca/en/our-services/advanced-research-computing/account-management/apply-account) username and the [address of one of the clusters](https://docs.alliancecan.ca/wiki/National_systems#Compute_clusters). For example: 
+The arguments in this command are (1) the username you've been assigned in the remote system, and (2) the URL/address of the system you are trying to connect to. To log in to an Alliance cluster, you will use your [CCDB](https://www.alliancecan.ca/en/our-services/advanced-research-computing/account-management/apply-account) username and the [address of one of the clusters](https://docs.alliancecan.ca/wiki/National_systems#Compute_clusters). For example, if user000 were to log in to the Fir cluster, they would use the following ssh command: 
 
 ```shell 
 ssh user000@fir.alliancecan.ca
 ```
 
-The first time you log in to a system, you will get a warning message with a fingerprint challenge alerting you that your computer doesn't recognize the key fingerprint of the remote system. 
+For step-by-step video on logging into the Alliance's clusters, [click here](https://www.youtube.com/watch?v=MAyLpC8zyQE). 
+
+The first time you log in to a system, you will get a warning message with a fingerprint challenge alerting you that your computer doesn't recognize the key fingerprint of the remote system. For example, here is a fingerprint challenge I encountered logging into a workshop cluster for the first time: 
 
 <figure markdown="span">
     ![image of console](./content/fingerprint_challenge.png){width=600}
@@ -98,7 +100,8 @@ Type `yes` to continue connecting to the remote system only if reasons 1, 2, or 
 
 When you type your password in, you will **not see anything appear on the screen**: your password will not be printed, nor will you see any key stroke indicators like dots or asterisks. This means you need to be extra careful typing your password - entering an incorrect password more than a few times will cause the system to block your connection attempts for some period of time before you can try again. 
 
-The Alliance clusters use [multifactor authentication](https://docs.alliancecan.ca/wiki/Multifactor_authentication) for logging in, meaning that you will need to have it set up before trying to connect to a cluster.
+!!!note "Using the Alliance clusters."
+    The Alliance clusters use [multifactor authentication](https://docs.alliancecan.ca/wiki/Multifactor_authentication) for logging in, meaning that you will need to have it set up before trying to connect to a cluster.
 
 ## Working in the remote system shell.
 
@@ -111,7 +114,7 @@ finnsdot94
 /home/finnsdot94
 ```
 
-Above, you can see that my name in this remote system is `finnsdot94` and that I am currently connected to the `login1` node (the first node on the cluster) and working in the highest-lvel working directory.
+Above, you can see that my name in this remote system is `finnsdot94` and that I am currently connected to the `login1` node (the first node on the cluster) and working in the highest-level working directory (my home directory).
 
 Now, let's see what else is in our working directory. To list the files and folders in your working directory, use the command `ls`. Since we haven't added any files or folders yet, you should just see the default `project` and `scratch` directories. 
 
@@ -131,7 +134,7 @@ Finally, you can navigate between directories using the command `cd` which here 
 [finnsdot94@login1 projects] $
 ```
 
-You'll notice that now the wokring directory location in my prompt has changed from `~` to `projects`. You can move back up to the home directory by using the command `cd ..`.
+You'll notice that now the wokring directory location in my prompt has changed from `~` to `projects`. You can move back up to the home directory by using the command `cd ..`
 
 !!! note "Navigating the file system."
 
